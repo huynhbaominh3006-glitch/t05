@@ -1,32 +1,34 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Survey Result</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    <title>Survey Results</title>
+    <link rel="stylesheet" href="styles/main.css?v=1">
 </head>
 <body>
-<div class="result-box">
-    <h1>Thanks for taking our survey!</h1>
+    <div class="result-box">
+        <h1>Thank You!</h1>
+        <p>Here is the information you entered:</p>
 
-    <p>Here is the information that you entered:</p><br>
+        <label>First Name:</label>
+        <span><%= request.getParameter("firstName") %></span>
 
-    <label>Email:</label>
-    <span>${user.email}</span><br>
-    <label>First Name:</label>
-    <span>${user.firstName}</span><br>
-    <label>Last Name:</label>
-    <span>${user.lastName}</span><br>
-    <label>Heard From:</label>
-    <span>${user.heardFrom}</span><br>
-    <label>Updates:</label>
-    <span>${user.wantsUpdates}</span><br>
+        <label>Last Name:</label>
+        <span><%= request.getParameter("lastName") %></span>
 
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <c:if test="${user.wantsUpdates == 'Yes'}">
+        <label>Email:</label>
+        <span><%= request.getParameter("email") %></span>
+
+        <label>Heard From:</label>
+        <span><%= request.getParameter("heardFrom") %></span>
+
+        <label>Wants Updates:</label>
+        <span><%= request.getParameter("wantsUpdates") != null ? "Yes" : "No" %></span>
+
         <label>Contact Via:</label>
-        <span>${user.contactVia}</span>
-    </c:if>
-</div>
+        <span><%= request.getParameter("contactVia") %></span>
+
+        <a href="index.html"><input type="submit" value="Back to Survey"></a>
+    </div>
 </body>
 </html>
