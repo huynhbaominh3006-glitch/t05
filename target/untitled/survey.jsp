@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Survey Results</title>
-    <link rel="stylesheet" href="styles/main.css?v=1">
+    <link rel="stylesheet" href="styles/main.css?v=2">
 </head>
 <body>
     <div class="result-box">
