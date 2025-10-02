@@ -28,7 +28,7 @@
         <label>Contact Via:</label>
         <span><%= request.getParameter("contactVia") %></span>
 
-        <a href="index.html"><input type="submit" value="Back to Survey"></a>
+        <button onclick="window.location.href='index.html'">Back to Survey</button>
     </div>
 </body>
 </html>
